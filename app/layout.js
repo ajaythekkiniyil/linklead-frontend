@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "LinkLead.in - Connecting Businesses with Customers",
+  title: "LinkLead.in - Connecting Businesses with Customers in kerala",
   description: "Discover how LinkLead.in bridges the gap between businesses and customers with innovative solutions. Enhance your connections, lead the market, and grow your brand.",
 };
 
