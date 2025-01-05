@@ -67,14 +67,18 @@ export default function Header() {
                 <div className="md:hidden bg-white border-t border-gray-200 z-20 mt-4">
                     <nav className="flex flex-col px-6 py-4 space-y-4">
                         <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
-                            Pay Rent
+                            Home
+                        </Link>
+                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                            Services
+                        </Link>
+                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                            Privacy
                         </Link>
                         <button className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-200 ease-in-out">
-                            Post Your Property
+                            Post Your Business
                         </button>
-                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
-                            Sign up
-                        </Link>
+
                     </nav>
                 </div>
             )}
