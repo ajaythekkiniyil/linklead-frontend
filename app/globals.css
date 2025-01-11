@@ -3,7 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-lato: "Lato", sans-serif;
+  --primary-color: #049752;
 }
 
+body {
+  font-family: var(--font-lato);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat);
+}
+
+.login-btn {
+  font-size: 15px;
+  background: #07a961;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 5px;
+  font-weight: 400;
+}

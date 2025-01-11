@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -10,30 +11,28 @@ export default function Header() {
             <div className="mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center space-x-3">
-                    <div className="font-bold text-2xl text-green-500">
+                    <Image src='/assets/images/logo.png' alt="Logo" width={120} height={100} />
+                    {/* <div className="font-bold text-2xl text-green-500">
                         Linklead
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-8">
-                    <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                    <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                         Post Your Business
                     </Link>
-                    {/* <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
-                        Sign up
-                    </Link> */}
-                    <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                    <Link href="#" className="login-btn">
                         Log in
                     </Link>
                 </nav>
 
                 {/* Mobile Navigation */}
-                <div className="md:hidden flex items-center space-x-4">
+                <div className="md:hidden flex items-center space-x-2">
                     {/* Log in Button */}
                     <Link
                         href="#"
-                        className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out mr-4 border border-gray-300 px-4 py-1 rounded-lg"
+                        className="login-btn"
                     >
                         Log in
                     </Link>
@@ -66,16 +65,16 @@ export default function Header() {
             {menuOpen && (
                 <div className="md:hidden bg-white border-t border-gray-200 z-20 mt-4">
                     <nav className="flex flex-col px-6 py-4 space-y-4">
-                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                        <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                             Home
                         </Link>
-                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                        <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                             Services
                         </Link>
-                        <Link href="#" className="text-gray-600 hover:text-green-500 transition duration-200 ease-in-out">
+                        <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                             Privacy
                         </Link>
-                        <button className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-200 ease-in-out">
+                        <button className="login-btn">
                             Post Your Business
                         </button>
 

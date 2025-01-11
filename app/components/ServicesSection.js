@@ -14,13 +14,13 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-8">
       <div className="container mx-auto px-4">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
           Our Services
         </h2>
-        <p className="text-gray-600 text-center mb-12">
+        <p className="hidden md:block text-gray-600 text-center mb-12">
           From traditional performances to modern event services, we cater to all your needs.
         </p>
 
@@ -31,7 +31,7 @@ export default function ServicesSection() {
               key={index}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mb-4 text-3xl">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center text-3xl">
                 {service.icon}
               </div>
               <span className="text-sm font-medium text-gray-800">
