@@ -6,11 +6,10 @@ export default function SearchSection() {
     const [searchBoxClicked, setSearchBoxClicked] = useState(false);
 
     return (
-        <section className="py-12">
+        <section className="py-4 md:py-12">
             {/* Desktop Section */}
             <div className="container mx-auto px-4">
-                {/* SEO Heading */}
-                <h1 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-4">
+                <h1 className="hidden md:block text-2xl md:text-3xl font-bold text-center text-gray-800 mb-4">
                     LinkLead - Connecting Businesses with Customers
                 </h1>
                 <p className="hidden md:block text-gray-600 text-center mb-8">

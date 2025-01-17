@@ -7,22 +7,19 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header className="bg-white sticky top-0 z-50 shadow-md py-4">
+        <header className="bg-white sticky top-0 z-50 shadow-md py-5">
             <div className="mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center space-x-3">
-                    <Image src='/assets/images/logo.png' alt="Logo" width={120} height={100} />
-                    {/* <div className="font-bold text-2xl text-green-500">
-                        Linklead
-                    </div> */}
+                    <Image src='/assets/images/linklead-logo.svg' alt="Linklead logo" width={125} height={125} />
                 </div>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center space-x-8">
-                    <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
+                    <Link href="/post-service" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                         Post Your Business
                     </Link>
-                    <Link href="#" className="login-btn">
+                    <Link href="/login" className="login-btn">
                         Log in
                     </Link>
                 </nav>
@@ -31,7 +28,7 @@ export default function Header() {
                 <div className="md:hidden flex items-center space-x-2">
                     {/* Log in Button */}
                     <Link
-                        href="#"
+                        href="/login"
                         className="login-btn"
                     >
                         Log in
@@ -74,10 +71,12 @@ export default function Header() {
                         <Link href="#" className="text-gray-600 hover:text-primary transition duration-200 ease-in-out">
                             Privacy
                         </Link>
-                        <button className="login-btn">
+                        <Link
+                            href="/post-service"
+                            className="login-btn text-center"
+                        >
                             Post Your Business
-                        </button>
-
+                        </Link>
                     </nav>
                 </div>
             )}
