@@ -23,8 +23,8 @@ const PostBusinessSection = () => {
 
     return (
         <section className="bg-gray-100 py-12">
-            <Link href='/' className="absolute md:hidden top-2 left-4">
-                <ArrowLeft size={23} strokeWidth={0.6} />
+            <Link href='/' className="absolute md:hidden top-3 left-4">
+                <ArrowLeft size={23} strokeWidth={0.8} />
             </Link>
             <div className="container mx-auto px-6">
                 <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">

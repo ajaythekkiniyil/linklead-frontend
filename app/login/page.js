@@ -5,8 +5,8 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-6">
-      <Link href='/' className="absolute md:hidden top-2 left-4">
-        <ArrowLeft size={23} strokeWidth={0.6} />
+      <Link href='/' className="absolute md:hidden top-3 left-4">
+        <ArrowLeft size={23} strokeWidth={0.8} />
       </Link>
       <div className="max-w-sm w-full bg-white shadow-lg rounded-lg p-8">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
