@@ -1,4 +1,6 @@
 "use client"
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const PostBusinessSection = () => {
@@ -21,6 +23,9 @@ const PostBusinessSection = () => {
 
     return (
         <section className="bg-gray-100 py-12">
+            <Link href='/' className="absolute md:hidden top-2 left-4">
+                <ArrowLeft size={23} strokeWidth={0.6} />
+            </Link>
             <div className="container mx-auto px-6">
                 <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
                     Post Your Business
@@ -95,7 +100,7 @@ const PostBusinessSection = () => {
                     <div className="flex justify-center mb-4">
                         <button
                             type="submit"
-                            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-200"
+                            className="w-full bg-primary text-white py-2 rounded-lg"
                         >
                             Post Your Business
                         </button>

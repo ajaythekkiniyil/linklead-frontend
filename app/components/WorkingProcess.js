@@ -59,7 +59,7 @@ export default function WorkingProcess() {
                             key={index}
                             className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition-shadow duration-300"
                         >
-                            <div className="text-4xl mb-4">{service.icon}</div>
+                            <div className="text-2xl mb-4">{service.icon}</div>
                             <h3 className="text-lg font-semibold text-gray-800 mb-2">
                                 {service.title}
                             </h3>
