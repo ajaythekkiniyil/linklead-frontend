@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
         <header className="bg-white sticky top-0 z-50 shadow-md py-5">
-            <div className="mx-auto px-6 flex justify-between items-center">
+            <div className="mx-auto px-3 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center space-x-3">
                     <Image src='/assets/images/linklead-logo.svg' alt="Linklead logo" width={125} height={125} />
