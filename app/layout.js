@@ -1,5 +1,6 @@
 import { Montserrat, Lato } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster"
 
 // Import Montserrat for headings
 const montserrat = Montserrat({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.variable} ${lato.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
