@@ -82,6 +82,66 @@ const PostBusinessSection = () => {
                         ></textarea>
                     </div>
 
+                    <div className="mb-6 flex gap-2">
+                        <div>
+                            <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
+                                City
+                            </label>
+                            <input
+                                type="text"
+                                id="contact"
+                                placeholder="Enter your state"
+                                value={contact}
+                                onChange={(e) => setContact(e.target.value)}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
+                                State
+                            </label>
+                            <input
+                                type="text"
+                                id="contact"
+                                placeholder="Enter your city"
+                                value={contact}
+                                onChange={(e) => setContact(e.target.value)}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
+                                Pincode
+                            </label>
+                            <input
+                                type="text"
+                                id="contact"
+                                placeholder="Enter your pincode"
+                                value={contact}
+                                onChange={(e) => setContact(e.target.value)}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div className="mb-6">
+                        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+                            Address
+                        </label>
+                        <textarea
+                            id="description"
+                            rows="4"
+                            placeholder="Enter your complete address"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
+                            required
+                        ></textarea>
+                    </div>
+
                     <div className="mb-6">
                         <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
                             Contact Information
@@ -89,7 +149,7 @@ const PostBusinessSection = () => {
                         <input
                             type="text"
                             id="contact"
-                            placeholder="Enter your contact number or email"
+                            placeholder="Enter your contact number"
                             value={contact}
                             onChange={(e) => setContact(e.target.value)}
                             className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"

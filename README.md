@@ -1,3 +1,3 @@
 // otp timer (done)
 // resend otp (done)
-// forgot username or password
+// forgot username or password -- (pending...)

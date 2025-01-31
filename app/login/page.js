@@ -3,10 +3,15 @@ import axiosInstance from "@/lib/axiosInstance";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
+import { useToast } from "@/hooks/use-toast";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+
+  const { toast } = useToast()
+  const router = useRouter()
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -17,10 +22,20 @@ const LoginPage = () => {
           password
         });
         if (response.status === 200) {
-          alert('login success')
+          localStorage.setItem('token', response.data.token)
+          toast({
+            title: "Login Successful",
+            description: "You have successfully logged in. Welcome back!",
+          });
+
+          router.push('/')
         }
       } catch (error) {
-        alert('login error')
+        toast({
+          title: "Login error!",
+          description: "Incorrect username or password.",
+          variant: "destructive",
+        });
       }
     };
     login()
@@ -44,7 +59,7 @@ const LoginPage = () => {
               type="text"
               value={username}
               placeholder="Enter your username"
-              onChange={(e)=> setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
               required
             />
@@ -58,7 +73,7 @@ const LoginPage = () => {
               type="password"
               value={password}
               placeholder="Enter your password"
-              onChange={(e)=> setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700"
               required
             />
@@ -85,11 +100,11 @@ const LoginPage = () => {
           </p>
         </div>
 
-        <div className="text-center mt-2">
-          <Link href="#" className="text-sm text-gray-600 hover:text-primary">
+        {/* <div className="text-center mt-2">
+          <Link href="/forgot-password" className="text-sm text-gray-600 hover:text-primary">
             Forgot password?
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
