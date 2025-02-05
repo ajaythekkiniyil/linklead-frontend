@@ -2,19 +2,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import ProfileDropdown from "./ProfileDropdown";
+import useAuthStore from "../store/authStore";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(true)
+    const { user } = useAuthStore()
 
     return (
         <header className="bg-white sticky top-0 z-50 shadow-md py-3">
@@ -32,72 +25,23 @@ export default function Header() {
                         Post Your Business
                     </Link>
                     {
-                        !isLoggedIn
+                        !user
                             ?
                             <Link href="/login" className="login-btn">
                                 Log in
                             </Link>
                             :
-                            <>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger className="outline-none">
-                                        <Avatar>
-                                            <AvatarImage src="https://github.com/shadcn.png" />
-                                            <AvatarFallback>CN</AvatarFallback>
-                                        </Avatar>
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent className="mr-5">
-                                        <DropdownMenuLabel>Hi, Ajay 👋</DropdownMenuLabel>
-                                        <DropdownMenuSeparator />
-                                        <DropdownMenuItem>
-                                            <Link href='/update-profile'>
-                                                Profile
-                                            </Link>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            <Link href='/my-services'>
-                                                Services
-                                            </Link>
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            Logout
-                                        </DropdownMenuItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                            </>
+                            <ProfileDropdown />
+                            
                     }
                 </nav>
 
                 {/* Mobile Navigation */}
                 {
-                    isLoggedIn
+                    user
                         ?
                         <div className="md:hidden flex">
-                            <DropdownMenu>
-                                <DropdownMenuTrigger className="outline-none">
-                                    <Avatar>
-                                        <AvatarImage src="https://github.com/shadcn.png" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent className="mr-5">
-                                    <DropdownMenuLabel>Hi, Ajay 👋</DropdownMenuLabel>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
-                                        <Link href='/update-profile'>
-                                            Profile
-                                        </Link>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <Link href='/my-services'>
-                                            Services
-                                        </Link>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        Logout
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                            <ProfileDropdown />
                         </div>
                         :
                         <>

@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
 import { useToast } from "@/hooks/use-toast";
+import useAuthStore from "../store/authStore";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const { setUser } = useAuthStore()
 
   const { toast } = useToast()
   const router = useRouter()
@@ -17,12 +19,9 @@ const LoginPage = () => {
     e.preventDefault();
     const login = async () => {
       try {
-        const response = await axiosInstance.post("/login", {
-          userName: username,
-          password
-        });
+        const response = await axiosInstance.post("/login", { userName: username, password });
         if (response.status === 200) {
-          localStorage.setItem('token', response.data.token)
+          setUser(response.data.token)
           toast({
             title: "Login Successful",
             description: "You have successfully logged in. Welcome back!",
